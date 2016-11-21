@@ -1,0 +1,278 @@
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20161121205736)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161121205736"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUsernameToUsers (20161121205752)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "username" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161121205752"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-11-21 20:58:14 UTC], ["updated_at", 2016-11-21 20:58:14 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_username' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_username' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2016-11-21 13:59:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (382.4ms)
+Completed 500 Internal Server Error in 398ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jemino/Desktop/devise-demo/app/assets/config
+  /Users/jemino/Desktop/devise-demo/app/assets/images
+  /Users/jemino/Desktop/devise-demo/app/assets/javascripts
+  /Users/jemino/Desktop/devise-demo/app/assets/stylesheets
+  /Users/jemino/Desktop/devise-demo/vendor/assets/javascripts
+  /Users/jemino/Desktop/devise-demo/vendor/assets/stylesheets
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/angular-rails-templates-1.0.2/vendor/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/jemino/Desktop/devise-demo/lib/assets/bower_components
+  /Users/jemino/Desktop/devise-demo/vendor/assets/bower_components
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>DeviseDemo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:15
+app/views/application/index.html.erb:7:in `_app_views_application_index_html_erb___1302143680974668317_70245375444820'
+app/controllers/application_controller.rb:5:in `index'
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.5ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (106.0ms)
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:00:38 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (3638.8ms)
+Completed 500 Internal Server Error in 3647ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'angular' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jemino/Desktop/devise-demo/app/assets/config
+  /Users/jemino/Desktop/devise-demo/app/assets/images
+  /Users/jemino/Desktop/devise-demo/app/assets/javascripts
+  /Users/jemino/Desktop/devise-demo/app/assets/stylesheets
+  /Users/jemino/Desktop/devise-demo/vendor/assets/javascripts
+  /Users/jemino/Desktop/devise-demo/vendor/assets/stylesheets
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/jquery-rails-4.2.1/vendor/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/coffee-rails-4.2.1/lib/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/angular-rails-templates-1.0.2/vendor/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actioncable-5.0.0.1/lib/assets/compiled
+  /Users/jemino/Desktop/devise-demo/lib/assets/bower_components
+  /Users/jemino/Desktop/devise-demo/vendor/assets/bower_components
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.7/assets/fonts
+  /Users/jemino/.rvm/gems/ruby-2.2.3/gems/bootstrap-sass-3.3.7/assets/images):
+    4:     <title>DeviseDemo</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    8:     <%= javascript_include_tag 'application' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:15
+app/views/application/index.html.erb:7:in `_app_views_application_index_html_erb___1302143680974668317_70245390227480'
+app/controllers/application_controller.rb:5:in `index'
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (24.1ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendering /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jemino/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (106.5ms)
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:01:17 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (4190.2ms)
+Completed 200 OK in 4205ms (Views: 4205.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:07:56 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (654.4ms)
+Completed 200 OK in 663ms (Views: 662.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:08:10 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (99.4ms)
+Completed 200 OK in 108ms (Views: 107.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:08:34 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (667.5ms)
+Completed 200 OK in 675ms (Views: 675.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:08:50 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (564.7ms)
+Completed 200 OK in 573ms (Views: 572.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:18:01 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (753.5ms)
+Completed 200 OK in 770ms (Views: 763.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:18:36 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (610.7ms)
+Completed 200 OK in 618ms (Views: 618.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2016-11-21 14:18:38 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:19:08 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (667.8ms)
+Completed 200 OK in 677ms (Views: 676.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2016-11-21 14:19:10 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users.json" for 127.0.0.1 at 2016-11-21 14:19:37 -0700
+Processing by Devise::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"email"=>"jessenovotny@gmail.com", "username"=>"jesse", "password"=>"[FILTERED]"}, "registration"=>{"user"=>{"email"=>"jessenovotny@gmail.com", "username"=>"jesse", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jessenovotny@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["email", "jessenovotny@gmail.com"], ["encrypted_password", "$2a$11$7uiZWwZACe2kvo6Bdy8n2eNYe6.GfaONAxNrrvGVpeN/YGHIb7ccS"], ["created_at", 2016-11-21 21:19:37 UTC], ["updated_at", 2016-11-21 21:19:37 UTC], ["username", "jesse"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-11-21 21:19:37 UTC], ["last_sign_in_at", 2016-11-21 21:19:37 UTC], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", 2016-11-21 21:19:37 UTC], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.08ms)
+Completed 201 Created in 264ms (Views: 7.9ms | ActiveRecord: 5.2ms)
+
+
+Started DELETE "/users/sign_out.json" for 127.0.0.1 at 2016-11-21 14:19:44 -0700
+Processing by Devise::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 8ms (ActiveRecord: 0.5ms)
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2016-11-21 14:20:37 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "email"=>"jessenovotny@gmail.com"}, "session"=>{"user"=>{"password"=>"[FILTERED]", "email"=>"jessenovotny@gmail.com"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jessenovotny@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2016-11-21 21:20:37 UTC], ["sign_in_count", 2], ["updated_at", 2016-11-21 21:20:37 UTC], ["id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.81ms)
+Completed 201 Created in 165ms (Views: 1.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-21 14:21:29 -0700
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb
+  Rendered application/index.html.erb (622.6ms)
+Completed 200 OK in 630ms (Views: 629.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in.json" for 127.0.0.1 at 2016-11-21 14:21:31 -0700
+Processing by Devise::SessionsController#create as JSON
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (1.33ms)
+Completed 201 Created in 23ms (Views: 3.1ms | ActiveRecord: 1.4ms)
+
+
