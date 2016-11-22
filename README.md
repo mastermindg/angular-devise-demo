@@ -1,7 +1,5 @@
 # Angular with Devise Walkthrough
 
-# Angular with Devise
-
 For this blog post, I have decided to create a video walkthrough of how to create an Angular application with Devise for basic authentication. 
 
 Getting started on my Angular portfolio project, this was one of the my biggest hurdles. Online resources were sparce, incomplete, or overwhelming, so I decided to create a guide.
