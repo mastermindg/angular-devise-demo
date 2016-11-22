@@ -41,6 +41,13 @@ Create `app/views/application/index.html.erb`
 Copy contents from `views/layouts/application.html.erb` to `index.html.erb`, then delete `application.html.erb`
 replace `<%= yield %>` with `<ui-view></ui-view>`
 
+Add the following in `config/application.rb` directly under `class Application < Rails::Application`:
+```
+config.to_prepare do
+  DeviseController.respond_to :html, :json
+end
+```
+
 #app/controllers/application_controller.rb
 ```
 class ApplicationController < ActionController::Base
