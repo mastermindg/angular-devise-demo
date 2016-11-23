@@ -156,6 +156,7 @@ By default, Rails will initialize with `views/layouts/application.html.erb` but 
 - MOVE that file to `app/views/application/`
 - Rename it to `index.html.erb`
 - Replace `<%= yield %>` with `<ui-view></ui-view>` (we won't be rendering any erb aside from the script/style tags in our header)
+- Remove any mention of "turoblinks" in the script and stylesheet erb tags
 - add `ng-app="myApp"` as an attribute to the `<body>` tag. When we launch our server, Angular will load and frantically search our DOM for this before initializing our app. 
 
 
