@@ -19,7 +19,7 @@ This guide is meant to be a diving board for getting started. It assumes you alr
 Feel free to read along with the video I created for this repo:
 
 
-https://youtu.be/ieoxzX-VPL4
+https://youtu.be/CtsC0iRxrAk
 
 
 To get started, you want to open Terminal and navigate to the folder where you want to create your new application. In this demonstration, I am on the Desktop.
