@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.4.1'  #RVM
 
-gem 'bower-rails', '~> 0.11.0'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 2.0'
 gem 'devise', '~> 4.3.0'
 
 # Allows us to place our html views in the assets/javascript directory
