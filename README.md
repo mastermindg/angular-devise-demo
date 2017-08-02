@@ -22,6 +22,13 @@ Feel free to read along with the video I created for this repo:
 https://youtu.be/CtsC0iRxrAk
 
 
+## Quick Start
+
+```
+docker build -t angular-devise-demo .
+docker run -p 3000:3000 angular-devise-demo
+```
+
 To get started, you want to open Terminal and navigate to the folder where you want to create your new application. In this demonstration, I am on the Desktop.
 
 
@@ -33,7 +40,7 @@ Open your `Gemfile`, remove `gem 'turbolinks'` and add the following:
 gem 'bower-rails'
 gem 'devise'
 gem 'angular-rails-templates' #=> allows us to place our html views in the assets/javascript directory
-gem 'active-model-serializer'
+gem 'active_model_serializers'
 gem 'bootstrap-sass', '~> 3.3.6' #=> bootstrap also requires the 'sass-rails' gem, which should already be included in your gemfile 
 ```
 
