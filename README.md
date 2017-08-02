@@ -16,11 +16,6 @@ Granted, a huge part of web development is being able to solve complex problems 
 This guide is meant to be a diving board for getting started. It assumes you already have a basic understanding of Angular, Rails, Devise, and Bootstrap. I chose to not explore Active Record, however I do touch on Active Model Serializer as it is necessary for sending models to your Javascript front end. There is much more to learn about this subject and would warrant it's own series of guides. Likewise, I only go into installing Bootstrap until the point that I can verify it's working.  
 
 
-Feel free to read along with the video I created for this repo:
-
-
-https://youtu.be/CtsC0iRxrAk
-
 
 ## Quick Start
 
@@ -28,6 +23,11 @@ https://youtu.be/CtsC0iRxrAk
 docker build -t angular-devise-demo .
 docker run -p 3000:3000 angular-devise-demo
 ```
+
+## Build from sratch
+
+Feel free to read along with the video I created for this repo:
+https://youtu.be/CtsC0iRxrAk
 
 To get started, you want to open Terminal and navigate to the folder where you want to create your new application. In this demonstration, I am on the Desktop.
 
