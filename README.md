@@ -74,9 +74,9 @@ By the time you've got momentum building out your app, you'll likely have many m
 "vendor": {
   "name": "bower-rails generated vendor assets",
   "dependencies": {
-    "angular": "v1.5.8", 
-    "angular-ui-router": "latest",
-    "angular-devise": "latest"
+    "angular": "v1.6.5",
+    "angular-ui-router": "1.0.5",
+    "angular-devise": "1.3.0"
   }
 }
 ```
