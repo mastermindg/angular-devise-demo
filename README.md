@@ -21,7 +21,7 @@ This guide is meant to be a diving board for getting started. It assumes you alr
 
 ```
 docker build -t angular-devise-demo .
-docker run -p 3000:3000 angular-devise-demo
+docker run -d --name angular -p 3000:3000 angular-devise-demo
 ```
 
 ## Build from sratch
