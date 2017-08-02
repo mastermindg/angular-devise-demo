@@ -1,0 +1,9 @@
+{
+  "name": "angular-devise-demo",
+  "private": true,
+  "dependencies": {
+    "angular": "v1.6.5",
+    "angular-ui-router": "1.0.5",
+    "angular-devise": "1.3.0"
+  }
+}
