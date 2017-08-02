@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.1'  #RVM
+ruby '2.4.1' 
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 2.0'
