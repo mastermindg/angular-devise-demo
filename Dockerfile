@@ -1,7 +1,7 @@
 FROM ruby:2.4-alpine
 
 # Install Rails Dependencies
-RUN apk update && apk add build-base nodejs bash mysql-dev mysql-client sqlite-dev
+RUN apk update && apk add build-base nodejs yarn bash mysql-dev mysql-client sqlite-dev
 
 ENV RAILS_ENV development
 
