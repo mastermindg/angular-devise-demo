@@ -19,10 +19,14 @@ This guide is meant to be a diving board for getting started. It assumes you alr
 
 ## Quick Start
 
+Build and run the completed project with Docker:
+
 ```
 docker build -t angular-devise-demo .
 docker run -d --name angular -p 3000:3000 angular-devise-demo
 ```
+
+Go to http://localhost:3000 to check out the site!
 
 ## Build from sratch
 
